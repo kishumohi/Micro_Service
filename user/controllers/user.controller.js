@@ -20,7 +20,7 @@ module.exports.registercontroller = async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.cookies("token", token);
+    req.cookies("token", token);
     res.send({ message: "User Registed sucessfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
